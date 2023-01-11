@@ -22,11 +22,11 @@ const Layout: React.FC = () => {
   return (
     <aside css={sideStyle}>
       <h1 css={logo}>
-        <Link href="/">Next D3</Link>
+        <Link href="/">Wallet Creator</Link>
       </h1>
-
       <div>
-        <Link href="line">Line Chart</Link>
+        <Link href="account">Create Account</Link>
+        <Link href="account">View Account Info</Link>
       </div>
     </aside>
   );
