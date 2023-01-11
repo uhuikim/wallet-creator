@@ -9,13 +9,19 @@ const sideStyle = css({
   position: 'absolute',
   left: 0,
   top: 0,
-  padding: '1rem',
+  padding: '2rem',
   background: palette.primary,
   color: palette.white,
 });
 
+const navLIist = css({
+  '& li': {
+    padding: '1rem 0',
+  },
+});
 const logo = css({
   fontSize: '1.5rem',
+  marginBottom: '2rem',
 });
 
 const Layout: React.FC = () => {
@@ -24,10 +30,14 @@ const Layout: React.FC = () => {
       <h1 css={logo}>
         <Link href="/">Wallet Creator</Link>
       </h1>
-      <div>
-        <Link href="account">Create Account</Link>
-        <Link href="account">View Account Info</Link>
-      </div>
+      <ul css={navLIist}>
+        <li>
+          <Link href="account">Create Account</Link>
+        </li>
+        <li>
+          <Link href="account">View Account Info</Link>
+        </li>
+      </ul>
     </aside>
   );
 };

@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 
-import normalize from './normalize';
+import reset from './reset';
 import base from './base';
 
 const styles = css`
-  ${normalize}
+  ${reset}
   ${base}
 `;
 

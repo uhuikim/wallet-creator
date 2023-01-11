@@ -18,6 +18,10 @@ const base = css`
     text-decoration: none;
   }
 
+  li {
+    list-style: none;
+  }
+
   * {
     box-sizing: border-box;
   }
