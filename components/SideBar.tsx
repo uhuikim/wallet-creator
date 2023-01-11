@@ -1,17 +1,35 @@
 import { css } from '@emotion/react';
+import Link from 'next/link';
 import React, { ReactNode } from 'react';
+import palette from '../styles/palette';
 
 const sideStyle = css({
   height: '100%',
-  width: '150px',
+  width: '250px',
   position: 'absolute',
   left: 0,
   top: 0,
   padding: '1rem',
+  background: palette.primary,
+  color: palette.white,
+});
+
+const logo = css({
+  fontSize: '1.5rem',
 });
 
 const Layout: React.FC = () => {
-  return <aside css={sideStyle}>이것은 사이드바</aside>;
+  return (
+    <aside css={sideStyle}>
+      <h1 css={logo}>
+        <Link href="/">Next D3</Link>
+      </h1>
+
+      <div>
+        <Link href="line">Line Chart</Link>
+      </div>
+    </aside>
+  );
 };
 
 export default Layout;

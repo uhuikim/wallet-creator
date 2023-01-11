@@ -18,5 +18,5 @@ const Layout: React.FC<Props> = ({ children }) => {
 export default Layout;
 
 const contentStyle = css({
-  marginLeft: '150px',
+  marginLeft: '250px',
 });
