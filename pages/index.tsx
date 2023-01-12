@@ -5,12 +5,47 @@ import { useContext } from 'react';
 import { GlobalContext } from './_app';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
+import { useRouter } from 'next/router';
 
-const container = css({
-  width: '960px',
-  margin: '0 auto',
-  padding: '2rem',
-});
+const Home: NextPage = () => {
+  const router = useRouter();
+  const { isLogin, setIsLogin } = useContext(GlobalContext);
+  const handleButtonClick = (url: string) => {
+    router.push(url);
+  };
+
+  return (
+    <div>
+      <div css={box}>
+        <h1>Welcome to GoWallet</h1>
+        <div css={walletContainer}>
+          <div css={walletBox}>
+            <UploadFileOutlinedIcon />
+            <p>이미 비밀 복구 구문이 있습니다.</p>
+            <button
+              css={buttonStyle}
+              onClick={() => handleButtonClick('access')}
+            >
+              지갑 가져오기
+            </button>
+          </div>
+          <div css={walletBox}>
+            <AddOutlinedIcon />
+            <p>Account 생성하기</p>
+            <button
+              css={buttonStyle}
+              onClick={() => handleButtonClick('create')}
+            >
+              지갑 생성하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
 
 const box = css({
   display: 'flex',
@@ -56,29 +91,3 @@ const walletBox = css({
 const buttonStyle = css({
   padding: '0.5rem 1rem',
 });
-
-const Home: NextPage = () => {
-  const { isLogin, setIsLogin } = useContext(GlobalContext);
-
-  return (
-    <div css={container}>
-      <div css={box}>
-        <h1>Welcome to GoWallet</h1>
-        <div css={walletContainer}>
-          <div css={walletBox}>
-            <UploadFileOutlinedIcon />
-            <p>이미 비밀 복구 구문이 있습니다.</p>
-            <button css={buttonStyle}>지갑 가져오기</button>
-          </div>
-          <div css={walletBox}>
-            <AddOutlinedIcon />
-            <p>Account 생성하기</p>
-            <button css={buttonStyle}>지갑 생성하기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Home;

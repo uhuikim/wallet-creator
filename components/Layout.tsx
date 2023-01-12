@@ -6,6 +6,12 @@ type Props = {
   children: ReactNode;
 };
 
+const contentStyle = css({
+  margin: '70px auto 0 auto',
+  width: '960px',
+  padding: '2rem',
+});
+
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div>
@@ -16,7 +22,3 @@ const Layout: React.FC<Props> = ({ children }) => {
 };
 
 export default Layout;
-
-const contentStyle = css({
-  marginTop: '70px',
-});
