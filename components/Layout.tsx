@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import SideBar from './SideBar';
+import Header from './Header';
 import { css } from '@emotion/react';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div>
-      <SideBar />
+      <Header />
       <div css={contentStyle}>{children}</div>
     </div>
   );
@@ -18,5 +18,5 @@ const Layout: React.FC<Props> = ({ children }) => {
 export default Layout;
 
 const contentStyle = css({
-  marginLeft: '250px',
+  marginTop: '70px',
 });

@@ -6,7 +6,6 @@ const base = css`
   body,
   #__next {
     background: ${palette.background};
-    height: 100%;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
