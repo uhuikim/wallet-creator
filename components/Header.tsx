@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import Link from 'next/link';
 import { useContext } from 'react';
-import { GlobalContext } from '../pages/_app';
+import { GlobalContext } from '../contexts';
+
 import palette from '../styles/palette';
 
 const sideStyle = css({
@@ -28,8 +29,10 @@ const logo = css({
 });
 
 const Header: React.FC = () => {
-  const { isLogin } = useContext(GlobalContext);
-  console.log(isLogin);
+  const {
+    state: { isLogin },
+  } = useContext(GlobalContext);
+
   return (
     <aside css={sideStyle}>
       <h1 css={logo}>

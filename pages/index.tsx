@@ -2,14 +2,12 @@ import { css } from '@emotion/react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useContext } from 'react';
-import { GlobalContext } from './_app';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
   const router = useRouter();
-  const { isLogin, setIsLogin } = useContext(GlobalContext);
   const handleButtonClick = (url: string) => {
     router.push(url);
   };
